@@ -492,7 +492,35 @@ public class ProdutosCadastro extends javax.swing.JFrame {
 
             try {
                 interactions.criarProduto(produtos);
-                JOptionPane.showMessageDialog(rootPane, "Produto cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+                // Mensagem a ser exibida
+                String message = "Produto cadastrado com sucesso!";
+                String title = "Sucesso";
+
+                // Criar botões personalizados
+                Object[] options = {"Voltar", "Permanecer"};
+
+                // Exibir o JOptionPane com botões personalizados
+                int choice = JOptionPane.showOptionDialog(
+                        rootPane, // Componente pai
+                        message, // Mensagem
+                        title, // Título
+                        JOptionPane.YES_NO_OPTION, // Tipo de opção
+                        JOptionPane.INFORMATION_MESSAGE, // Tipo de mensagem
+                        null, // Ícone
+                        options, // Botões personalizados
+                        options[0] // Botão padrão
+                );
+
+                // Ação com base na escolha do usuário
+                if (choice == JOptionPane.YES_OPTION) {
+                    // Ação para "Voltar à Tela"
+                    ProdutosFrame produtosFrame = new ProdutosFrame();
+                    produtosFrame.setVisible(true);
+                    produtosFrame.pack();
+                    produtosFrame.setLocationRelativeTo(null);
+                    this.dispose();
+                }
             } catch (SQLException ex) {
                 Logger.getLogger(ProdutosCadastro.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(rootPane, "Valor inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -522,7 +550,35 @@ public class ProdutosCadastro extends javax.swing.JFrame {
                 Produtos produto = interactions.lerProduto(id2);
                 if (produto != null) {
                     interactions.excluirProduto(id2);
-                    JOptionPane.showMessageDialog(rootPane, "Produto excluido com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+                    // Mensagem a ser exibida
+                    String message = "Produto excluido com sucesso!";
+                    String title = "Sucesso";
+
+                    // Criar botões personalizados
+                    Object[] options = {"Voltar", "Permanecer"};
+
+                    // Exibir o JOptionPane com botões personalizados
+                    int choice = JOptionPane.showOptionDialog(
+                            rootPane, // Componente pai
+                            message, // Mensagem
+                            title, // Título
+                            JOptionPane.YES_NO_OPTION, // Tipo de opção
+                            JOptionPane.INFORMATION_MESSAGE, // Tipo de mensagem
+                            null, // Ícone
+                            options, // Botões personalizados
+                            options[0] // Botão padrão
+                    );
+
+                    // Ação com base na escolha do usuário
+                    if (choice == JOptionPane.YES_OPTION) {
+                        // Ação para "Voltar à Tela"
+                        ProdutosFrame produtosFrame = new ProdutosFrame();
+                        produtosFrame.setVisible(true);
+                        produtosFrame.pack();
+                        produtosFrame.setLocationRelativeTo(null);
+                        this.dispose();
+                    }
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Produto não encontrado: O ID está incorreto.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
@@ -566,7 +622,35 @@ public class ProdutosCadastro extends javax.swing.JFrame {
                             throw new IllegalArgumentException("Quantidade não pode ser menor que 0.");
                         }
                         interactions.atualizarProduto(produtos);
-                        JOptionPane.showMessageDialog(rootPane, "Produto atualizado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+                        // Mensagem a ser exibida
+                        String message = "Produto atualizado com sucesso!";
+                        String title = "Sucesso";
+
+                        // Criar botões personalizados
+                        Object[] options = {"Voltar", "Permanecer"};
+
+                        // Exibir o JOptionPane com botões personalizados
+                        int choice = JOptionPane.showOptionDialog(
+                                rootPane, // Componente pai
+                                message, // Mensagem
+                                title, // Título
+                                JOptionPane.YES_NO_OPTION, // Tipo de opção
+                                JOptionPane.INFORMATION_MESSAGE, // Tipo de mensagem
+                                null, // Ícone
+                                options, // Botões personalizados
+                                options[0] // Botão padrão
+                        );
+
+                        // Ação com base na escolha do usuário
+                        if (choice == JOptionPane.YES_OPTION) {
+                            // Ação para "Voltar à Tela"
+                            ProdutosFrame produtosFrame = new ProdutosFrame();
+                            produtosFrame.setVisible(true);
+                            produtosFrame.pack();
+                            produtosFrame.setLocationRelativeTo(null);
+                            this.dispose();
+                        }
                     } catch (IllegalArgumentException ex) {
                         JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                     }

@@ -408,8 +408,36 @@ public class VendasCadastro extends javax.swing.JFrame {
                     Vendas venda = new Vendas(cpf, id, valorUnit, qtd);
 
                     interactions.criarVenda(venda);
-                    JOptionPane.showMessageDialog(rootPane, "Venda cadastrada com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-                    
+
+                    // Mensagem a ser exibida
+                    String message = "Venda cadastrada com sucesso!";
+                    String title = "Sucesso";
+
+                    // Criar botões personalizados
+                    Object[] options = {"Voltar", "Permanecer"};
+
+                    // Exibir o JOptionPane com botões personalizados
+                    int choice = JOptionPane.showOptionDialog(
+                            rootPane, // Componente pai
+                            message, // Mensagem
+                            title, // Título
+                            JOptionPane.YES_NO_OPTION, // Tipo de opção
+                            JOptionPane.INFORMATION_MESSAGE, // Tipo de mensagem
+                            null, // Ícone
+                            options, // Botões personalizados
+                            options[0] // Botão padrão
+                    );
+
+                    // Ação com base na escolha do usuário
+                    if (choice == JOptionPane.YES_OPTION) {
+                        // Ação para "Voltar à Tela"
+                        VendasFrame vendasFrame = new VendasFrame();
+                        vendasFrame.setVisible(true);
+                        vendasFrame.pack();
+                        vendasFrame.setLocationRelativeTo(null);
+                        this.dispose();
+                    }
+
                     addRowToJTable();
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "A quantidade de produtos deve ser maior que 0.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -480,9 +508,9 @@ public class VendasCadastro extends javax.swing.JFrame {
 
     public void addRowToJTable() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        
+
         model.setRowCount(0);
-        
+
         List<Produtos> produtos = interactions.visualizarProdutos();
 
         Object rowData[] = new Object[5];

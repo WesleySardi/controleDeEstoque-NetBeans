@@ -7,6 +7,9 @@ package org.example.gui.netbeansGui;
 import java.awt.Color;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -404,11 +407,54 @@ public class FirstOptions extends javax.swing.JFrame {
                 }
             }
 
-            // Salvar o arquivo Excel
-            try (FileOutputStream fileOut = new FileOutputStream("Vendas.xlsx")) {
-                workbook.write(fileOut);
-            } catch (IOException e) {
+            try {
+                // Obter o caminho da Área de Trabalho do usuário
+                String userHome = System.getProperty("user.home");
+                Path desktopPath = Paths.get(userHome, "Desktop");
+
+                // Verificar se o caminho "Desktop" existe
+                if (!Files.exists(desktopPath)) {
+                    // Tentativa de fallback para "Área de Trabalho" caso "Desktop" não exista
+                    desktopPath = Paths.get(userHome, "Área de Trabalho");
+                }
+
+                // Verificar se o caminho "Área de Trabalho" existe
+                if (!Files.exists(desktopPath)) {
+                    // Verificar se o OneDrive existe e usar a pasta apropriada
+                    Path oneDrivePath = Paths.get(userHome, "OneDrive");
+                    if (Files.exists(oneDrivePath)) {
+                        desktopPath = oneDrivePath.resolve("Desktop");
+                        if (!Files.exists(desktopPath)) {
+                            desktopPath = oneDrivePath.resolve("Área de Trabalho");
+                        }
+                    }
+                }
+
+                // Verificar se o caminho "Desktop" ou "Área de Trabalho" existe
+                if (!Files.exists(desktopPath)) {
+                    throw new IOException("Não foi possível encontrar a Área de Trabalho.");
+                }
+
+                // Criar uma pasta para relatórios na área de trabalho
+                Path reportsFolderPath = desktopPath.resolve("Relatorios");
+                if (!Files.exists(reportsFolderPath)) {
+                    Files.createDirectory(reportsFolderPath);
+                }
+
+                // Caminho completo do arquivo a ser salvo
+                Path filePath = reportsFolderPath.resolve("RelatorioDasVendas-"+jTextField2.getText().replaceAll("/", "_")+"-"+jTextField3.getText().replaceAll("/", "_")+".xlsx");
+
+                // Salvar o arquivo Excel
+                try (FileOutputStream fileOut = new FileOutputStream(filePath.toFile())) {
+                    workbook.write(fileOut);
+                    System.out.println("Arquivo salvo na Área de Trabalho: " + filePath.toString());
+                    JOptionPane.showMessageDialog(null, "Arquivo salvo na pasta Relatorios na Área de Trabalho!");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } catch (Exception e) {
                 e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Erro ao salvar o arquivo na Área de Trabalho!");
             }
 
             // Fechar os recursos do banco de dados

@@ -16,7 +16,7 @@ import org.example.tables.Clientes;
  * @author wesle
  */
 public class ClientesCadastro extends javax.swing.JFrame {
-    
+
     SystemInteractions interactions = new SystemInteractions();
 
     /**
@@ -25,10 +25,10 @@ public class ClientesCadastro extends javax.swing.JFrame {
     public ClientesCadastro() {
         initComponents();
     }
-    
+
     public ClientesCadastro(String cpf, String nome, String telefone, String email) {
         initComponents();
-        
+
         cpfClientes2.setText(cpf);
         nomeClientes2.setText(nome);
         telefoneClientes2.setText(telefone);
@@ -404,15 +404,43 @@ public class ClientesCadastro extends javax.swing.JFrame {
         String nome2 = nomeClientes2.getText();
         String telefone2 = telefoneClientes2.getText();
         String email2 = emailClientes2.getText();
-        
+
         if (!cpf2.trim().equals("") && !nome2.trim().equals("")) {
             Clientes cliente = new Clientes(cpf2, nome2, telefone2, email2);
             try {
                 Clientes clienteExists = interactions.lerCliente(cpf2);
-                
+
                 if (clienteExists != null) {
                     interactions.atualizarCliente(cliente);
-                    JOptionPane.showMessageDialog(rootPane, "Cliente atualizado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+                    // Mensagem a ser exibida
+                    String message = "Cliente atualizado com sucesso!";
+                    String title = "Sucesso";
+
+                    // Criar botões personalizados
+                    Object[] options = {"Voltar", "Permanecer"};
+
+                    // Exibir o JOptionPane com botões personalizados
+                    int choice = JOptionPane.showOptionDialog(
+                            rootPane, // Componente pai
+                            message, // Mensagem
+                            title, // Título
+                            JOptionPane.YES_NO_OPTION, // Tipo de opção
+                            JOptionPane.INFORMATION_MESSAGE, // Tipo de mensagem
+                            null, // Ícone
+                            options, // Botões personalizados
+                            options[0] // Botão padrão
+                    );
+
+                    // Ação com base na escolha do usuário
+                    if (choice == JOptionPane.YES_OPTION) {
+                        // Ação para "Voltar à Tela"
+                        ClientesFrame clientesFrame = new ClientesFrame();
+                        clientesFrame.setVisible(true);
+                        clientesFrame.pack();
+                        clientesFrame.setLocationRelativeTo(null);
+                        this.dispose();
+                    }
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Cliente não encontrado: O CPF está incorreto.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
@@ -430,13 +458,41 @@ public class ClientesCadastro extends javax.swing.JFrame {
         String nome1 = nomeClientes1.getText();
         String telefone1 = telefoneClientes1.getText();
         String email1 = emailClientes1.getText();
-        
+
         if (!cpf1.trim().equals("") && !nome1.trim().equals("")) {
             Clientes cliente = new Clientes(cpf1, nome1, telefone1, email1);
-            
+
             try {
                 interactions.criarCliente(cliente);
-                JOptionPane.showMessageDialog(rootPane, "Cliente criado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+                // Mensagem a ser exibida
+                String message = "Cliente criado com sucesso!";
+                String title = "Sucesso";
+
+                // Criar botões personalizados
+                Object[] options = {"Voltar", "Permanecer"};
+
+                // Exibir o JOptionPane com botões personalizados
+                int choice = JOptionPane.showOptionDialog(
+                        rootPane, // Componente pai
+                        message, // Mensagem
+                        title, // Título
+                        JOptionPane.YES_NO_OPTION, // Tipo de opção
+                        JOptionPane.INFORMATION_MESSAGE, // Tipo de mensagem
+                        null, // Ícone
+                        options, // Botões personalizados
+                        options[0] // Botão padrão
+                );
+
+                // Ação com base na escolha do usuário
+                if (choice == JOptionPane.YES_OPTION) {
+                    // Ação para "Voltar à Tela"
+                    ClientesFrame clientesFrame = new ClientesFrame();
+                    clientesFrame.setVisible(true);
+                    clientesFrame.pack();
+                    clientesFrame.setLocationRelativeTo(null);
+                    this.dispose();
+                }
             } catch (SQLException ex) {
                 Logger.getLogger(ClientesCadastro.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(rootPane, "Valor inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
