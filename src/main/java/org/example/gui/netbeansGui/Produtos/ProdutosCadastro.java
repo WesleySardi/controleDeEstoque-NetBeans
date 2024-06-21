@@ -4,6 +4,7 @@
  */
 package org.example.gui.netbeansGui.Produtos;
 
+import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -99,13 +100,74 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(235, 235, 235));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        valorProduto1.setForeground(new java.awt.Color(204, 204, 204));
+        valorProduto1.setText("0");
         valorProduto1.setNextFocusableComponent(quantidadeProduto1);
+        valorProduto1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                valorProduto1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                valorProduto1FocusLost(evt);
+            }
+        });
+        valorProduto1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                valorProduto1KeyReleased(evt);
+            }
+        });
 
+        quantidadeProduto1.setForeground(new java.awt.Color(204, 204, 204));
+        quantidadeProduto1.setText("0");
         quantidadeProduto1.setNextFocusableComponent(descricaoProduto1);
+        quantidadeProduto1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                quantidadeProduto1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                quantidadeProduto1FocusLost(evt);
+            }
+        });
+        quantidadeProduto1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                quantidadeProduto1KeyReleased(evt);
+            }
+        });
 
+        descricaoProduto1.setForeground(new java.awt.Color(204, 204, 204));
+        descricaoProduto1.setText("Descrição do Produto");
+        descricaoProduto1.setToolTipText("");
         descricaoProduto1.setNextFocusableComponent(nomeProduto1);
+        descricaoProduto1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                descricaoProduto1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                descricaoProduto1FocusLost(evt);
+            }
+        });
+        descricaoProduto1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                descricaoProduto1KeyReleased(evt);
+            }
+        });
 
+        nomeProduto1.setForeground(new java.awt.Color(204, 204, 204));
+        nomeProduto1.setText("Nome do Produto");
         nomeProduto1.setNextFocusableComponent(valorProduto1);
+        nomeProduto1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nomeProduto1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nomeProduto1FocusLost(evt);
+            }
+        });
+        nomeProduto1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nomeProduto1KeyReleased(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel17.setText("Nome:");
@@ -198,7 +260,22 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(235, 235, 235));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        valorProduto2.setForeground(new java.awt.Color(204, 204, 204));
+        valorProduto2.setText("0");
         valorProduto2.setNextFocusableComponent(quantidadeProduto2);
+        valorProduto2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                valorProduto2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                valorProduto2FocusLost(evt);
+            }
+        });
+        valorProduto2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                valorProduto2KeyReleased(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel7.setText("Valor:");
@@ -206,14 +283,59 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel11.setText("Quantidade:");
 
+        quantidadeProduto2.setForeground(new java.awt.Color(204, 204, 204));
+        quantidadeProduto2.setText("0");
         quantidadeProduto2.setNextFocusableComponent(descricaoProduto2);
+        quantidadeProduto2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                quantidadeProduto2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                quantidadeProduto2FocusLost(evt);
+            }
+        });
+        quantidadeProduto2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                quantidadeProduto2KeyReleased(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel12.setText("Descrição:");
 
+        descricaoProduto2.setForeground(new java.awt.Color(204, 204, 204));
+        descricaoProduto2.setText("Descrição do Produto");
         descricaoProduto2.setNextFocusableComponent(idProduto1);
+        descricaoProduto2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                descricaoProduto2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                descricaoProduto2FocusLost(evt);
+            }
+        });
+        descricaoProduto2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                descricaoProduto2KeyReleased(evt);
+            }
+        });
 
+        nomeProduto2.setForeground(new java.awt.Color(204, 204, 204));
+        nomeProduto2.setText("Nome do Produto");
         nomeProduto2.setNextFocusableComponent(valorProduto2);
+        nomeProduto2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nomeProduto2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nomeProduto2FocusLost(evt);
+            }
+        });
+        nomeProduto2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nomeProduto2KeyReleased(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel13.setText("Nome:");
@@ -221,7 +343,22 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel15.setText("ID:");
 
+        idProduto1.setForeground(new java.awt.Color(204, 204, 204));
+        idProduto1.setText("0");
         idProduto1.setNextFocusableComponent(nomeProduto2);
+        idProduto1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                idProduto1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                idProduto1FocusLost(evt);
+            }
+        });
+        idProduto1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                idProduto1KeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -283,7 +420,22 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel21.setText("ID:");
 
+        idProduto2.setForeground(new java.awt.Color(204, 204, 204));
+        idProduto2.setText("0");
         idProduto2.setNextFocusableComponent(idProduto2);
+        idProduto2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                idProduto2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                idProduto2FocusLost(evt);
+            }
+        });
+        idProduto2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                idProduto2KeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -668,6 +820,226 @@ public class ProdutosCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Existem campos vazios.", "Aviso", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void nomeProduto1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeProduto1FocusGained
+        if (nomeProduto1.getText().equals("Nome do Produto")) {
+            nomeProduto1.setText("");
+            nomeProduto1.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_nomeProduto1FocusGained
+
+    private void nomeProduto1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeProduto1FocusLost
+        if (nomeProduto1.getText().equals("")) {
+            nomeProduto1.setText("Nome do Produto");
+            nomeProduto1.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_nomeProduto1FocusLost
+
+    private void nomeProduto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeProduto1KeyReleased
+        String input = nomeProduto1.getText();
+
+        // Remover todos os caracteres não alfabéticos
+        input = input.replaceAll("[^\\p{L}]", "");
+        nomeProduto1.setText(input);
+    }//GEN-LAST:event_nomeProduto1KeyReleased
+
+    private void valorProduto1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_valorProduto1FocusGained
+        if (valorProduto1.getText().equals("0")) {
+            valorProduto1.setText("");
+            valorProduto1.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_valorProduto1FocusGained
+
+    private void valorProduto1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_valorProduto1FocusLost
+        if (valorProduto1.getText().equals("")) {
+            valorProduto1.setText("0");
+            valorProduto1.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_valorProduto1FocusLost
+
+    private void valorProduto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valorProduto1KeyReleased
+        String input = valorProduto1.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+        valorProduto1.setText(input);
+    }//GEN-LAST:event_valorProduto1KeyReleased
+
+    private void quantidadeProduto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quantidadeProduto1KeyReleased
+        String input = quantidadeProduto1.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+        quantidadeProduto1.setText(input);
+    }//GEN-LAST:event_quantidadeProduto1KeyReleased
+
+    private void quantidadeProduto1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_quantidadeProduto1FocusGained
+        if (quantidadeProduto1.getText().equals("0")) {
+            quantidadeProduto1.setText("");
+            quantidadeProduto1.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_quantidadeProduto1FocusGained
+
+    private void quantidadeProduto1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_quantidadeProduto1FocusLost
+        if (quantidadeProduto1.getText().equals("")) {
+            quantidadeProduto1.setText("0");
+            quantidadeProduto1.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_quantidadeProduto1FocusLost
+
+    private void descricaoProduto1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descricaoProduto1FocusGained
+        if (descricaoProduto1.getText().equals("Descrição do Produto")) {
+            descricaoProduto1.setText("");
+            descricaoProduto1.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_descricaoProduto1FocusGained
+
+    private void descricaoProduto1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descricaoProduto1FocusLost
+        if (descricaoProduto1.getText().equals("")) {
+            descricaoProduto1.setText("Descrição do Produto");
+            descricaoProduto1.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_descricaoProduto1FocusLost
+
+    private void descricaoProduto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descricaoProduto1KeyReleased
+        String input = descricaoProduto1.getText();
+
+        // Remover todos os caracteres não alfabéticos
+        input = input.replaceAll("[^\\p{L}]", "");
+        descricaoProduto1.setText(input);
+    }//GEN-LAST:event_descricaoProduto1KeyReleased
+
+    private void idProduto1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idProduto1FocusGained
+        if (idProduto1.getText().equals("0")) {
+            idProduto1.setText("");
+            idProduto1.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_idProduto1FocusGained
+
+    private void idProduto1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idProduto1FocusLost
+        if (idProduto1.getText().equals("")) {
+            idProduto1.setText("0");
+            idProduto1.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_idProduto1FocusLost
+
+    private void idProduto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idProduto1KeyReleased
+        String input = idProduto1.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+        idProduto1.setText(input);
+    }//GEN-LAST:event_idProduto1KeyReleased
+
+    private void nomeProduto2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeProduto2FocusGained
+        if (nomeProduto2.getText().equals("Nome do Produto")) {
+            nomeProduto2.setText("");
+            nomeProduto2.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_nomeProduto2FocusGained
+
+    private void nomeProduto2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeProduto2FocusLost
+        if (nomeProduto2.getText().equals("")) {
+            nomeProduto2.setText("Nome do Produto");
+            nomeProduto2.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_nomeProduto2FocusLost
+
+    private void nomeProduto2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeProduto2KeyReleased
+        String input = nomeProduto2.getText();
+
+        // Remover todos os caracteres não alfabéticos
+        input = input.replaceAll("[^\\p{L}]", "");
+        nomeProduto2.setText(input);
+    }//GEN-LAST:event_nomeProduto2KeyReleased
+
+    private void valorProduto2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_valorProduto2FocusGained
+        if (valorProduto2.getText().equals("0")) {
+            valorProduto2.setText("");
+            valorProduto2.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_valorProduto2FocusGained
+
+    private void valorProduto2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valorProduto2KeyReleased
+        String input = valorProduto2.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+        valorProduto2.setText(input);
+    }//GEN-LAST:event_valorProduto2KeyReleased
+
+    private void valorProduto2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_valorProduto2FocusLost
+        if (valorProduto2.getText().equals("")) {
+            valorProduto2.setText("0");
+            valorProduto2.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_valorProduto2FocusLost
+
+    private void quantidadeProduto2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_quantidadeProduto2FocusGained
+        if (quantidadeProduto2.getText().equals("0")) {
+            quantidadeProduto2.setText("");
+            quantidadeProduto2.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_quantidadeProduto2FocusGained
+
+    private void quantidadeProduto2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_quantidadeProduto2FocusLost
+        if (quantidadeProduto2.getText().equals("")) {
+            quantidadeProduto2.setText("0");
+            quantidadeProduto2.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_quantidadeProduto2FocusLost
+
+    private void quantidadeProduto2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quantidadeProduto2KeyReleased
+        String input = quantidadeProduto2.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+        quantidadeProduto2.setText(input);
+    }//GEN-LAST:event_quantidadeProduto2KeyReleased
+
+    private void descricaoProduto2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descricaoProduto2FocusGained
+        if (descricaoProduto2.getText().equals("Descrição do Produto")) {
+            descricaoProduto2.setText("");
+            descricaoProduto2.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_descricaoProduto2FocusGained
+
+    private void descricaoProduto2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descricaoProduto2FocusLost
+        if (descricaoProduto2.getText().equals("")) {
+            descricaoProduto2.setText("Descrição do Produto");
+            descricaoProduto2.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_descricaoProduto2FocusLost
+
+    private void descricaoProduto2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descricaoProduto2KeyReleased
+        String input = descricaoProduto2.getText();
+
+        // Remover todos os caracteres não alfabéticos
+        input = input.replaceAll("[^\\p{L}]", "");
+        descricaoProduto2.setText(input);
+    }//GEN-LAST:event_descricaoProduto2KeyReleased
+
+    private void idProduto2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idProduto2FocusGained
+        if (idProduto2.getText().equals("0")) {
+            idProduto2.setText("");
+            idProduto2.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_idProduto2FocusGained
+
+    private void idProduto2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idProduto2FocusLost
+        if (idProduto2.getText().equals("")) {
+            idProduto2.setText("0");
+            idProduto2.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_idProduto2FocusLost
+
+    private void idProduto2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idProduto2KeyReleased
+        String input = idProduto2.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+        idProduto2.setText(input);
+    }//GEN-LAST:event_idProduto2KeyReleased
 
     /**
      * @param args the command line arguments

@@ -98,7 +98,22 @@ public class VendasCadastro extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
         jLabel3.setText("Valor unitário:");
 
+        cpfClient.setForeground(new java.awt.Color(204, 204, 204));
+        cpfClient.setText("000-000-000-00");
         cpfClient.setNextFocusableComponent(idProduct);
+        cpfClient.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cpfClientFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cpfClientFocusLost(evt);
+            }
+        });
+        cpfClient.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cpfClientKeyReleased(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
         jLabel6.setText("CPF do cliente:");
@@ -106,14 +121,59 @@ public class VendasCadastro extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
         jLabel5.setText("ID do produto:");
 
+        valorUnitario.setForeground(new java.awt.Color(204, 204, 204));
+        valorUnitario.setText("0");
         valorUnitario.setNextFocusableComponent(qttSold);
+        valorUnitario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                valorUnitarioFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                valorUnitarioFocusLost(evt);
+            }
+        });
+        valorUnitario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                valorUnitarioKeyReleased(evt);
+            }
+        });
 
+        idProduct.setForeground(new java.awt.Color(204, 204, 204));
+        idProduct.setText("0");
         idProduct.setNextFocusableComponent(valorUnitario);
+        idProduct.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                idProductFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                idProductFocusLost(evt);
+            }
+        });
+        idProduct.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                idProductKeyReleased(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
         jLabel10.setText("Qtd. vendida:");
 
+        qttSold.setForeground(new java.awt.Color(204, 204, 204));
+        qttSold.setText("0");
         qttSold.setNextFocusableComponent(cpfClient);
+        qttSold.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                qttSoldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                qttSoldFocusLost(evt);
+            }
+        });
+        qttSold.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                qttSoldKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -505,6 +565,120 @@ public class VendasCadastro extends javax.swing.JFrame {
             searchByName.setForeground(new Color(204, 204, 204));
         }
     }//GEN-LAST:event_searchByNameFocusLost
+
+    private void cpfClientKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cpfClientKeyReleased
+        String input = cpfClient.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+
+        StringBuilder formattedInput = new StringBuilder(input);
+
+        // Adicionar '-' nos locais corretos do CPF
+        if (formattedInput.length() > 3) {
+            formattedInput.insert(3, "-");
+        }
+        if (formattedInput.length() > 7) {
+            formattedInput.insert(7, "-");
+        }
+        if (formattedInput.length() > 11) {
+            formattedInput.insert(11, "-");
+        }
+        // Limitar a 14 caracteres no máximo (000-000-000-00)
+        if (formattedInput.length() > 14) {
+            formattedInput.setLength(14);
+        }
+
+        // Atualizar o conteúdo do jTextField2
+        cpfClient.setText(formattedInput.toString());
+
+        // Validar o CPF
+        if (formattedInput.length() == 14) {
+            // Realizar a validação específica do CPF aqui
+            // Você pode usar bibliotecas de validação de CPF ou implementar a validação manualmente
+        }
+
+    }//GEN-LAST:event_cpfClientKeyReleased
+
+    private void cpfClientFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpfClientFocusGained
+        if (cpfClient.getText().equals("000-000-000-00")) {
+            cpfClient.setText("");
+            cpfClient.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_cpfClientFocusGained
+
+    private void cpfClientFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpfClientFocusLost
+        if (cpfClient.getText().equals("")) {
+            cpfClient.setText("000-000-000-00");
+            cpfClient.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_cpfClientFocusLost
+
+    private void idProductFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idProductFocusGained
+         if (idProduct.getText().equals("0")) {
+            idProduct.setText("");
+            idProduct.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_idProductFocusGained
+
+    private void idProductFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idProductFocusLost
+        if (idProduct.getText().equals("")) {
+            idProduct.setText("0");
+            idProduct.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_idProductFocusLost
+
+    private void valorUnitarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_valorUnitarioFocusGained
+        if (valorUnitario.getText().equals("0")) {
+            valorUnitario.setText("");
+            valorUnitario.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_valorUnitarioFocusGained
+
+    private void valorUnitarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_valorUnitarioFocusLost
+        if (valorUnitario.getText().equals("")) {
+            valorUnitario.setText("0");
+            valorUnitario.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_valorUnitarioFocusLost
+
+    private void qttSoldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_qttSoldFocusGained
+        if (qttSold.getText().equals("0")) {
+            qttSold.setText("");
+            qttSold.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_qttSoldFocusGained
+
+    private void qttSoldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_qttSoldFocusLost
+        if (qttSold.getText().equals("")) {
+            qttSold.setText("0");
+            qttSold.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_qttSoldFocusLost
+
+    private void idProductKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idProductKeyReleased
+        String input = idProduct.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+        idProduct.setText(input);
+    }//GEN-LAST:event_idProductKeyReleased
+
+    private void valorUnitarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valorUnitarioKeyReleased
+        String input = valorUnitario.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+        valorUnitario.setText(input);
+    }//GEN-LAST:event_valorUnitarioKeyReleased
+
+    private void qttSoldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_qttSoldKeyReleased
+        String input = qttSold.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+        qttSold.setText(input);
+    }//GEN-LAST:event_qttSoldKeyReleased
 
     public void addRowToJTable() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();

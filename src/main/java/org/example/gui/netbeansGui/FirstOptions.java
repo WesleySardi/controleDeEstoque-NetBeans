@@ -447,8 +447,7 @@ public class FirstOptions extends javax.swing.JFrame {
                 // Salvar o arquivo Excel
                 try (FileOutputStream fileOut = new FileOutputStream(filePath.toFile())) {
                     workbook.write(fileOut);
-                    System.out.println("Arquivo salvo na Área de Trabalho: " + filePath.toString());
-                    JOptionPane.showMessageDialog(null, "Arquivo salvo na pasta Relatorios na Área de Trabalho!");
+                    JOptionPane.showMessageDialog(null, "Arquivo salvo na pasta Relatórios na Área de Trabalho!");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -461,8 +460,6 @@ public class FirstOptions extends javax.swing.JFrame {
             resultSet.close();
             statement.close();
             connection.close();
-
-            JOptionPane.showMessageDialog(null, "Arquivo Excel gerado com sucesso!");
 
         } catch (SQLException e) {
             e.printStackTrace();

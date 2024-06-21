@@ -4,6 +4,7 @@
  */
 package org.example.gui.netbeansGui.Clientes;
 
+import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,6 +56,8 @@ public class ClientesCadastro extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         telefoneClientes2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
@@ -67,6 +70,8 @@ public class ClientesCadastro extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         emailClientes1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -89,13 +94,55 @@ public class ClientesCadastro extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(235, 235, 235));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        nomeClientes2.setForeground(new java.awt.Color(204, 204, 204));
+        nomeClientes2.setText("Nome do Cliente");
+        nomeClientes2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nomeClientes2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nomeClientes2FocusLost(evt);
+            }
+        });
+        nomeClientes2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nomeClientes2KeyReleased(evt);
+            }
+        });
+
         jLabel13.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel13.setText("Nome:");
 
         jLabel15.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel15.setText("CPF:");
 
+        cpfClientes2.setForeground(new java.awt.Color(204, 204, 204));
+        cpfClientes2.setText("000-000-000-00");
         cpfClientes2.setNextFocusableComponent(nomeClientes2);
+        cpfClientes2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cpfClientes2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cpfClientes2FocusLost(evt);
+            }
+        });
+        cpfClientes2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cpfClientes2KeyReleased(evt);
+            }
+        });
+
+        emailClientes2.setForeground(new java.awt.Color(204, 204, 204));
+        emailClientes2.setText("exemplo@ex.com");
+        emailClientes2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailClientes2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailClientes2FocusLost(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel16.setText("E-mail:");
@@ -103,7 +150,28 @@ public class ClientesCadastro extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel17.setText("Telefone:");
 
+        telefoneClientes2.setForeground(new java.awt.Color(204, 204, 204));
+        telefoneClientes2.setText("(00) 0 0000-0000");
         telefoneClientes2.setNextFocusableComponent(nomeClientes2);
+        telefoneClientes2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                telefoneClientes2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                telefoneClientes2FocusLost(evt);
+            }
+        });
+        telefoneClientes2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                telefoneClientes2KeyReleased(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        jLabel4.setText("* Obrigatório");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        jLabel5.setText("* Obrigatório");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -113,18 +181,25 @@ public class ClientesCadastro extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addGap(23, 23, 23))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)))
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cpfClientes2, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+                            .addComponent(cpfClientes2, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
                             .addComponent(nomeClientes2)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(telefoneClientes2)
                             .addComponent(emailClientes2))))
@@ -134,13 +209,17 @@ public class ClientesCadastro extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cpfClientes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cpfClientes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomeClientes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nomeClientes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(telefoneClientes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,15 +252,61 @@ public class ClientesCadastro extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(235, 235, 235));
         jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        nomeClientes1.setForeground(new java.awt.Color(204, 204, 204));
+        nomeClientes1.setText("Nome do Cliente");
+        nomeClientes1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nomeClientes1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nomeClientes1FocusLost(evt);
+            }
+        });
+        nomeClientes1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nomeClientes1KeyReleased(evt);
+            }
+        });
+
         jLabel23.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel23.setText("Nome:");
 
         jLabel24.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel24.setText("CPF:");
 
+        cpfClientes1.setForeground(new java.awt.Color(204, 204, 204));
+        cpfClientes1.setText("000-000-000-00");
         cpfClientes1.setNextFocusableComponent(nomeClientes2);
+        cpfClientes1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cpfClientes1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cpfClientes1FocusLost(evt);
+            }
+        });
+        cpfClientes1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cpfClientes1KeyReleased(evt);
+            }
+        });
 
+        telefoneClientes1.setForeground(new java.awt.Color(204, 204, 204));
+        telefoneClientes1.setText("(00) 0 0000-0000");
         telefoneClientes1.setNextFocusableComponent(nomeClientes2);
+        telefoneClientes1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                telefoneClientes1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                telefoneClientes1FocusLost(evt);
+            }
+        });
+        telefoneClientes1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                telefoneClientes1KeyReleased(evt);
+            }
+        });
 
         jLabel25.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel25.setText("Telefone:");
@@ -189,42 +314,63 @@ public class ClientesCadastro extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel26.setText("E-mail:");
 
+        emailClientes1.setForeground(new java.awt.Color(204, 204, 204));
+        emailClientes1.setText("exemplo@ex.com");
+        emailClientes1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailClientes1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailClientes1FocusLost(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        jLabel2.setText("* Obrigatório");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        jLabel3.setText("* Obrigatório");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cpfClientes1, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
-                            .addComponent(nomeClientes1)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(telefoneClientes1)
-                            .addComponent(emailClientes1))))
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3))
+                    .addComponent(jLabel25))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nomeClientes1)
+                    .addComponent(telefoneClientes1, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+                    .addComponent(emailClientes1)
+                    .addComponent(cpfClientes1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cpfClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cpfClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomeClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nomeClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(telefoneClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -233,7 +379,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jButton1.setBackground(new java.awt.Color(109, 172, 171));
@@ -502,6 +648,294 @@ public class ClientesCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void cpfClientes1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpfClientes1FocusGained
+        if (cpfClientes1.getText().equals("000-000-000-00")) {
+            cpfClientes1.setText("");
+            cpfClientes1.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_cpfClientes1FocusGained
+
+    private void cpfClientes1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpfClientes1FocusLost
+        if (cpfClientes1.getText().equals("")) {
+            cpfClientes1.setText("000-000-000-00");
+            cpfClientes1.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_cpfClientes1FocusLost
+
+    private void cpfClientes1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cpfClientes1KeyReleased
+        String input = cpfClientes1.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+
+        StringBuilder formattedInput = new StringBuilder(input);
+
+        // Adicionar '-' nos locais corretos do CPF
+        if (formattedInput.length() > 3) {
+            formattedInput.insert(3, "-");
+        }
+        if (formattedInput.length() > 7) {
+            formattedInput.insert(7, "-");
+        }
+        if (formattedInput.length() > 11) {
+            formattedInput.insert(11, "-");
+        }
+        // Limitar a 14 caracteres no máximo (000-000-000-00)
+        if (formattedInput.length() > 14) {
+            formattedInput.setLength(14);
+        }
+
+        // Atualizar o conteúdo do jTextField2
+        cpfClientes1.setText(formattedInput.toString());
+
+        // Validar o CPF
+        if (formattedInput.length() == 14) {
+            // Realizar a validação específica do CPF aqui
+            // Você pode usar bibliotecas de validação de CPF ou implementar a validação manualmente
+        }
+    }//GEN-LAST:event_cpfClientes1KeyReleased
+
+    private void cpfClientes2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpfClientes2FocusGained
+        if (cpfClientes2.getText().equals("000-000-000-00")) {
+            cpfClientes2.setText("");
+            cpfClientes2.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_cpfClientes2FocusGained
+
+    private void cpfClientes2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpfClientes2FocusLost
+        if (cpfClientes2.getText().equals("")) {
+            cpfClientes2.setText("000-000-000-00");
+            cpfClientes2.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_cpfClientes2FocusLost
+
+    private void cpfClientes2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cpfClientes2KeyReleased
+        String input = cpfClientes2.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+
+        StringBuilder formattedInput = new StringBuilder(input);
+
+        // Adicionar '-' nos locais corretos do CPF
+        if (formattedInput.length() > 3) {
+            formattedInput.insert(3, "-");
+        }
+        if (formattedInput.length() > 7) {
+            formattedInput.insert(7, "-");
+        }
+        if (formattedInput.length() > 11) {
+            formattedInput.insert(11, "-");
+        }
+        // Limitar a 14 caracteres no máximo (000-000-000-00)
+        if (formattedInput.length() > 14) {
+            formattedInput.setLength(14);
+        }
+
+        // Atualizar o conteúdo do jTextField2
+        cpfClientes2.setText(formattedInput.toString());
+
+        // Validar o CPF
+        if (formattedInput.length() == 14) {
+            // Realizar a validação específica do CPF aqui
+            // Você pode usar bibliotecas de validação de CPF ou implementar a validação manualmente
+        }
+    }//GEN-LAST:event_cpfClientes2KeyReleased
+
+    private void nomeClientes1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeClientes1FocusGained
+        if (nomeClientes1.getText().equals("Nome do Cliente")) {
+            nomeClientes1.setText("");
+            nomeClientes1.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_nomeClientes1FocusGained
+
+    private void nomeClientes1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeClientes1FocusLost
+        if (nomeClientes1.getText().equals("")) {
+            nomeClientes1.setText("Nome do Cliente");
+            nomeClientes1.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_nomeClientes1FocusLost
+
+    private void nomeClientes1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeClientes1KeyReleased
+        String input = nomeClientes1.getText();
+
+        // Remover todos os caracteres não alfabéticos
+        input = input.replaceAll("[^\\p{L}]", "");
+        nomeClientes1.setText(input);
+    }//GEN-LAST:event_nomeClientes1KeyReleased
+
+    private void telefoneClientes1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefoneClientes1FocusGained
+        if (telefoneClientes1.getText().equals("(00) 0 0000-0000")) {
+            telefoneClientes1.setText("");
+            telefoneClientes1.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_telefoneClientes1FocusGained
+
+    private void telefoneClientes1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefoneClientes1FocusLost
+        if (telefoneClientes1.getText().equals("")) {
+            telefoneClientes1.setText("(00) 0 0000-0000");
+            telefoneClientes1.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_telefoneClientes1FocusLost
+
+    private void telefoneClientes2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefoneClientes2FocusGained
+        if (telefoneClientes2.getText().equals("(00) 0 0000-0000")) {
+            telefoneClientes2.setText("");
+            telefoneClientes2.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_telefoneClientes2FocusGained
+
+    private void telefoneClientes2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefoneClientes2FocusLost
+        if (telefoneClientes2.getText().equals("")) {
+            telefoneClientes2.setText("(00) 0 0000-0000");
+            telefoneClientes2.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_telefoneClientes2FocusLost
+
+    private void emailClientes1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailClientes1FocusGained
+        if (emailClientes1.getText().equals("exemplo@ex.com")) {
+            emailClientes1.setText("");
+            emailClientes1.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_emailClientes1FocusGained
+
+    private void emailClientes1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailClientes1FocusLost
+        String input = emailClientes1.getText();
+
+        // Validar formato de email
+        if (!isValidEmail(input)) {
+            JOptionPane.showMessageDialog(null, "Email inválido! O formato deve ser 'email@email.com'.");
+            emailClientes1.setText("exemplo@ex.com");
+            emailClientes1.setForeground(new Color(204, 204, 204));
+        }
+
+        if (emailClientes1.getText().equals("")) {
+            emailClientes1.setText("exemplo@ex.com");
+            emailClientes1.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_emailClientes1FocusLost
+
+    private void emailClientes2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailClientes2FocusGained
+        if (emailClientes2.getText().equals("exemplo@ex.com")) {
+            emailClientes2.setText("");
+            emailClientes2.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_emailClientes2FocusGained
+
+    private void emailClientes2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailClientes2FocusLost
+
+        String input = emailClientes2.getText();
+
+        // Validar formato de email
+        if (!isValidEmail(input)) {
+            JOptionPane.showMessageDialog(null, "Email inválido! O formato deve ser 'email@email.com'.");
+            emailClientes2.setText("exemplo@ex.com");
+            emailClientes2.setForeground(new Color(204, 204, 204));
+        }
+
+        if (emailClientes2.getText().equals("")) {
+            emailClientes2.setText("exemplo@ex.com");
+            emailClientes2.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_emailClientes2FocusLost
+
+    private void nomeClientes2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeClientes2FocusGained
+        if (nomeClientes2.getText().equals("Nome do Cliente")) {
+            nomeClientes2.setText("");
+            nomeClientes2.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_nomeClientes2FocusGained
+
+    private void nomeClientes2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeClientes2FocusLost
+        if (nomeClientes2.getText().equals("")) {
+            nomeClientes2.setText("Nome do Cliente");
+            nomeClientes2.setForeground(new Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_nomeClientes2FocusLost
+
+    private void nomeClientes2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeClientes2KeyReleased
+        String input = nomeClientes2.getText();
+
+        // Remover todos os caracteres não alfabéticos
+        input = input.replaceAll("[^\\p{L}]", "");
+        nomeClientes2.setText(input);
+    }//GEN-LAST:event_nomeClientes2KeyReleased
+
+    private void telefoneClientes1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefoneClientes1KeyReleased
+        String input = telefoneClientes1.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+
+        StringBuilder formattedInput = new StringBuilder(input);
+
+        // Adicionar parênteses, espaço e traço nos locais corretos do telefone
+        if (formattedInput.length() > 0) {
+            formattedInput.insert(0, "(");
+        }
+        if (formattedInput.length() > 3) {
+            formattedInput.insert(3, ") ");
+        }
+        if (formattedInput.length() > 10) {
+            formattedInput.insert(6, " ");
+            formattedInput.insert(11, "-");
+        }
+        
+        // Limitar a 15 caracteres no máximo ((00) 0 0000-0000)
+        if (formattedInput.length() > 16) {
+            formattedInput.setLength(16);
+        }
+
+        // Atualizar o conteúdo do jTextField2
+        telefoneClientes1.setText(formattedInput.toString());
+
+        // Validar o telefone
+        if (formattedInput.length() == 16) {
+            // Realizar a validação específica do telefone aqui
+            // Você pode implementar a validação manualmente ou usar bibliotecas específicas
+        }
+    }//GEN-LAST:event_telefoneClientes1KeyReleased
+
+    private void telefoneClientes2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefoneClientes2KeyReleased
+        String input = telefoneClientes2.getText();
+
+        // Remover todos os caracteres não numéricos
+        input = input.replaceAll("[^\\d]", "");
+
+        StringBuilder formattedInput = new StringBuilder(input);
+
+        // Adicionar parênteses, espaço e traço nos locais corretos do telefone
+        if (formattedInput.length() > 0) {
+            formattedInput.insert(0, "(");
+        }
+        if (formattedInput.length() > 3) {
+            formattedInput.insert(3, ") ");
+        }
+        if (formattedInput.length() > 10) {
+            formattedInput.insert(6, " ");
+            formattedInput.insert(11, "-");
+        }
+        
+        // Limitar a 15 caracteres no máximo ((00) 0 0000-0000)
+        if (formattedInput.length() > 16) {
+            formattedInput.setLength(16);
+        }
+
+        // Atualizar o conteúdo do jTextField2
+        telefoneClientes2.setText(formattedInput.toString());
+
+        // Validar o telefone
+        if (formattedInput.length() == 16) {
+            // Realizar a validação específica do telefone aqui
+            // Você pode implementar a validação manualmente ou usar bibliotecas específicas
+        }
+    }//GEN-LAST:event_telefoneClientes2KeyReleased
+
+    private static boolean isValidEmail(String email) {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return email.matches(emailRegex);
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -554,11 +988,15 @@ public class ClientesCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
