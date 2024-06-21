@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import org.example.interactions.SystemInteractions;
 import org.example.tables.Clientes;
 
@@ -34,6 +35,19 @@ public class ClientesCadastro extends javax.swing.JFrame {
         nomeClientes2.setText(nome);
         telefoneClientes2.setText(telefone);
         emailClientes2.setText(email);
+
+        // Adiciona um listener para verificar a cor dos campos de texto ao iniciar a página
+        checkInputColor(cpfClientes2);
+        checkInputColor(nomeClientes2);
+        checkInputColor(telefoneClientes2);
+        checkInputColor(emailClientes2);
+    }
+
+    private void checkInputColor(JTextField textField) {
+        Color grayColor = new Color(204, 204, 204);
+        if (textField.getForeground().equals(grayColor)) {
+            textField.setForeground(Color.BLACK);
+        }
     }
 
     /**
@@ -114,6 +128,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
         jLabel13.setText("Nome:");
 
         jLabel15.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
         jLabel15.setText("CPF:");
 
         cpfClientes2.setForeground(new java.awt.Color(204, 204, 204));
@@ -551,8 +566,17 @@ public class ClientesCadastro extends javax.swing.JFrame {
         String telefone2 = telefoneClientes2.getText();
         String email2 = emailClientes2.getText();
 
-        if (!cpf2.trim().equals("") && !nome2.trim().equals("")) {
+        if (!cpf2.trim().equals("000-000-000-00") && !nome2.trim().equals("Nome do Cliente")) {
+            if (telefone2.trim().equals("(00) 0 0000-0000")) {
+                telefone2 = "";
+            }
+
+            if (email2.trim().equals("exemplo@ex.com")) {
+                email2 = "";
+            }
+
             Clientes cliente = new Clientes(cpf2, nome2, telefone2, email2);
+
             try {
                 Clientes clienteExists = interactions.lerCliente(cpf2);
 
@@ -605,39 +629,51 @@ public class ClientesCadastro extends javax.swing.JFrame {
         String telefone1 = telefoneClientes1.getText();
         String email1 = emailClientes1.getText();
 
-        if (!cpf1.trim().equals("") && !nome1.trim().equals("")) {
+        if (!cpf1.trim().equals("000-000-000-00") && !nome1.trim().equals("Nome do Cliente")) {
+            if (telefone1.trim().equals("(00) 0 0000-0000")) {
+                telefone1 = "";
+            }
+
+            if (email1.trim().equals("exemplo@ex.com")) {
+                email1 = "";
+            }
+
             Clientes cliente = new Clientes(cpf1, nome1, telefone1, email1);
 
             try {
-                interactions.criarCliente(cliente);
+                if (cpf1.length() == 14) {
+                    interactions.criarCliente(cliente);
 
-                // Mensagem a ser exibida
-                String message = "Cliente criado com sucesso!";
-                String title = "Sucesso";
+                    // Mensagem a ser exibida
+                    String message = "Cliente criado com sucesso!";
+                    String title = "Sucesso";
 
-                // Criar botões personalizados
-                Object[] options = {"Voltar", "Permanecer"};
+                    // Criar botões personalizados
+                    Object[] options = {"Voltar", "Permanecer"};
 
-                // Exibir o JOptionPane com botões personalizados
-                int choice = JOptionPane.showOptionDialog(
-                        rootPane, // Componente pai
-                        message, // Mensagem
-                        title, // Título
-                        JOptionPane.YES_NO_OPTION, // Tipo de opção
-                        JOptionPane.INFORMATION_MESSAGE, // Tipo de mensagem
-                        null, // Ícone
-                        options, // Botões personalizados
-                        options[0] // Botão padrão
-                );
+                    // Exibir o JOptionPane com botões personalizados
+                    int choice = JOptionPane.showOptionDialog(
+                            rootPane, // Componente pai
+                            message, // Mensagem
+                            title, // Título
+                            JOptionPane.YES_NO_OPTION, // Tipo de opção
+                            JOptionPane.INFORMATION_MESSAGE, // Tipo de mensagem
+                            null, // Ícone
+                            options, // Botões personalizados
+                            options[0] // Botão padrão
+                    );
 
-                // Ação com base na escolha do usuário
-                if (choice == JOptionPane.YES_OPTION) {
-                    // Ação para "Voltar à Tela"
-                    ClientesFrame clientesFrame = new ClientesFrame();
-                    clientesFrame.setVisible(true);
-                    clientesFrame.pack();
-                    clientesFrame.setLocationRelativeTo(null);
-                    this.dispose();
+                    // Ação com base na escolha do usuário
+                    if (choice == JOptionPane.YES_OPTION) {
+                        // Ação para "Voltar à Tela"
+                        ClientesFrame clientesFrame = new ClientesFrame();
+                        clientesFrame.setVisible(true);
+                        clientesFrame.pack();
+                        clientesFrame.setLocationRelativeTo(null);
+                        this.dispose();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "CPF inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(ClientesCadastro.class.getName()).log(Level.SEVERE, null, ex);
@@ -880,7 +916,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
             formattedInput.insert(6, " ");
             formattedInput.insert(11, "-");
         }
-        
+
         // Limitar a 15 caracteres no máximo ((00) 0 0000-0000)
         if (formattedInput.length() > 16) {
             formattedInput.setLength(16);
@@ -915,7 +951,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
             formattedInput.insert(6, " ");
             formattedInput.insert(11, "-");
         }
-        
+
         // Limitar a 15 caracteres no máximo ((00) 0 0000-0000)
         if (formattedInput.length() > 16) {
             formattedInput.setLength(16);

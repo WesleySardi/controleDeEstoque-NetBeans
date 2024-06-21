@@ -6,9 +6,9 @@ CREATE DATABASE projetoControleDeEstoque;
 
 -- Criar tabela Clientes com campos opcionais
 CREATE TABLE Clientes (
-    cpf CHAR(11) PRIMARY KEY,
+    cpf CHAR(14) PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    telefone VARCHAR(15),
+    telefone VARCHAR(16),
     email VARCHAR(100)
 );
 
@@ -24,7 +24,7 @@ CREATE TABLE Produtos (
 -- Criar tabela Vendas com novos campos
 CREATE TABLE Vendas (
     id SERIAL PRIMARY KEY,
-    cliente_cpf CHAR(11) REFERENCES Clientes(cpf),
+    cliente_cpf CHAR(14) REFERENCES Clientes(cpf),
     produto_id INT NOT NULL,
     nome_produto VARCHAR(100),
     quantidade_vendida INT NOT NULL,

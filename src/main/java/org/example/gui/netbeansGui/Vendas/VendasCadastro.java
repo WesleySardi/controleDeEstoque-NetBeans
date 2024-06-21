@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -43,7 +44,15 @@ public class VendasCadastro extends javax.swing.JFrame {
 
         addRowToJTable();
 
-        cpfClient.setText(cpf.toString());
+        cpfClient.setText(cpf);
+        checkInputColor(cpfClient);
+    }
+
+    private void checkInputColor(JTextField textField) {
+        Color grayColor = new Color(204, 204, 204);
+        if (textField.getForeground().equals(grayColor)) {
+            textField.setForeground(Color.BLACK);
+        }
     }
 
     /**
@@ -450,19 +459,19 @@ public class VendasCadastro extends javax.swing.JFrame {
         Integer qtd = null;
         Double valorUnit = null;
 
-        if (!idProduct.getText().trim().equals("")) {
+        if (!idProduct.getText().trim().equals("0")) {
             id = Integer.valueOf(idProduct.getText());
         }
 
-        if (!qttSold.getText().trim().equals("")) {
+        if (!qttSold.getText().trim().equals("0")) {
             qtd = Integer.valueOf(qttSold.getText());
         }
 
-        if (!valorUnitario.getText().trim().equals("")) {
+        if (!valorUnitario.getText().trim().equals("0")) {
             valorUnit = Double.valueOf(valorUnitario.getText());
         }
 
-        if (!cpf.trim().equals("") && id != null && qtd != null && valorUnit != null) {
+        if (!cpf.trim().equals("000-000-000-00") && id != null && qtd != null && valorUnit != null) {
             try {
                 if (qtd > 0) {
                     Vendas venda = new Vendas(cpf, id, valorUnit, qtd);
@@ -615,7 +624,7 @@ public class VendasCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_cpfClientFocusLost
 
     private void idProductFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idProductFocusGained
-         if (idProduct.getText().equals("0")) {
+        if (idProduct.getText().equals("0")) {
             idProduct.setText("");
             idProduct.setForeground(Color.black);
         }

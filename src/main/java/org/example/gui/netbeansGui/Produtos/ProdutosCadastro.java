@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import org.example.gui.netbeansGui.FirstOptions;
 import org.example.interactions.SystemInteractions;
 import org.example.tables.Produtos;
@@ -38,6 +39,21 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         descricaoProduto2.setText(desc);
 
         idProduto2.setText(id.toString());
+        
+        checkInputColor(idProduto1);
+        checkInputColor(nomeProduto2);
+        checkInputColor(valorProduto2);
+        checkInputColor(quantidadeProduto2);
+        checkInputColor(descricaoProduto2);
+        
+        checkInputColor(idProduto2);
+    }
+    
+    private void checkInputColor(JTextField textField) {
+        Color grayColor = new Color(204, 204, 204);
+        if (textField.getForeground().equals(grayColor)) {
+            textField.setForeground(Color.BLACK);
+        }
     }
 
     /**
@@ -631,15 +647,15 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         Double valor1 = null;
         Integer qtd1 = null;
 
-        if (!valorProduto1.getText().trim().equals("")) {
+        if (!valorProduto1.getText().trim().equals("0")) {
             valor1 = Double.valueOf(valorProduto1.getText());
         }
 
-        if (!quantidadeProduto1.getText().trim().equals("")) {
+        if (!quantidadeProduto1.getText().trim().equals("0")) {
             qtd1 = Integer.valueOf(quantidadeProduto1.getText());
         }
 
-        if (valor1 != null && qtd1 != null && !nome1.trim().equals("") && !desc1.trim().equals("")) {
+        if (valor1 != null && qtd1 != null && !nome1.trim().equals("Nome do Produto") && !desc1.trim().equals("Descrição do Produto")) {
             Produtos produtos = new Produtos(valor1, qtd1, nome1, desc1);
 
             try {
@@ -693,7 +709,7 @@ public class ProdutosCadastro extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Integer id2 = null;
 
-        if (!idProduto2.getText().trim().equals("")) {
+        if (!idProduto2.getText().trim().equals("0")) {
             id2 = Integer.valueOf(idProduto2.getText());
         }
 
@@ -751,19 +767,19 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         String nome2 = nomeProduto2.getText();
         String desc2 = descricaoProduto2.getText();
 
-        if (!idProduto1.getText().trim().equals("")) {
+        if (!idProduto1.getText().trim().equals("0")) {
             id1 = Integer.valueOf(idProduto1.getText());
         }
 
-        if (!valorProduto2.getText().trim().equals("")) {
+        if (!valorProduto2.getText().trim().equals("0")) {
             valor2 = Double.valueOf(valorProduto2.getText());
         }
 
-        if (!quantidadeProduto2.getText().trim().equals("")) {
+        if (!quantidadeProduto2.getText().trim().equals("0")) {
             qtd2 = Integer.valueOf(quantidadeProduto2.getText());
         }
 
-        if (id1 != null && valor2 != null && qtd2 != null && !nome2.trim().equals("") && !desc2.trim().equals("")) {
+        if (id1 != null && valor2 != null && qtd2 != null && !nome2.trim().equals("Nome do Produto") && !desc2.trim().equals("Descrição do Produto")) {
             Produtos produtos = new Produtos(id1, valor2, qtd2, nome2, desc2);
             try {
                 Produtos produtosExists = interactions.lerProduto(id1);
