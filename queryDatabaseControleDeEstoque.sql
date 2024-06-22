@@ -8,7 +8,7 @@ CREATE DATABASE projetoControleDeEstoque;
 CREATE TABLE Clientes (
     cpf CHAR(14) PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    telefone VARCHAR(16),
+    telefone VARCHAR(14),
     email VARCHAR(100)
 );
 
@@ -36,8 +36,8 @@ CREATE TABLE Vendas (
 -- Exemplo de inserção de dados
 
 -- Inserir clientes
-INSERT INTO Clientes (cpf, nome, telefone, email) VALUES ('12345678901', 'João Silva', '11123456789', 'joao.silva@example.com');
-INSERT INTO Clientes (cpf, nome, telefone, email) VALUES ('09876543210', 'Maria Oliveira', '11987654321', 'maria.oliveira@example.com');
+INSERT INTO Clientes (cpf, nome, telefone, email) VALUES ('12345678901', 'João Silva', '(47) 999999999', 'joao.silva@example.com');
+INSERT INTO Clientes (cpf, nome, telefone, email) VALUES ('09876543210', 'Maria Oliveira', '(47) 888888888', 'maria.oliveira@example.com');
 
 -- Inserir produtos
 INSERT INTO Produtos (valor, quantidade, nome, descricao) VALUES (29.99, 100, 'Caneta', 'Caneta esferográfica azul');
