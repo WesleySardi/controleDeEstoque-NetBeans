@@ -57,6 +57,7 @@ public class VendasFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vendas");
+        setResizable(false);
         setSize(new java.awt.Dimension(1000, 800));
 
         jPanel1.setBackground(new java.awt.Color(109, 204, 214));

@@ -64,6 +64,7 @@ public class ClientesFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clientes");
         setPreferredSize(new java.awt.Dimension(955, 600));
+        setResizable(false);
         setSize(new java.awt.Dimension(955, 600));
 
         jPanel1.setBackground(new java.awt.Color(109, 204, 214));
