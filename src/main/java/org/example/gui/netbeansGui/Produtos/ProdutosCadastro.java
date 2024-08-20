@@ -850,7 +850,7 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         String input = nomeProduto1.getText();
 
         // Remover todos os caracteres não alfabéticos
-        input = input.replaceAll("[^\\p{L}]", "");
+        input = input.replaceAll("[^\\p{L} ]", "");
         nomeProduto1.setText(input);
     }//GEN-LAST:event_nomeProduto1KeyReleased
 
@@ -872,7 +872,7 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         String input = valorProduto1.getText();
 
         // Remover todos os caracteres não numéricos
-        input = input.replaceAll("[^\\d]", "");
+        input = input.replaceAll("[^\\d.,]", "");
         valorProduto1.setText(input);
     }//GEN-LAST:event_valorProduto1KeyReleased
 
@@ -916,7 +916,7 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         String input = descricaoProduto1.getText();
 
         // Remover todos os caracteres não alfabéticos
-        input = input.replaceAll("[^\\p{L}]", "");
+        input = input.replaceAll("[^\\p{L} ]", "");
         descricaoProduto1.setText(input);
     }//GEN-LAST:event_descricaoProduto1KeyReleased
 
@@ -960,7 +960,7 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         String input = nomeProduto2.getText();
 
         // Remover todos os caracteres não alfabéticos
-        input = input.replaceAll("[^\\p{L}]", "");
+        input = input.replaceAll("[^\\p{L} ]", "");
         nomeProduto2.setText(input);
     }//GEN-LAST:event_nomeProduto2KeyReleased
 
@@ -975,7 +975,7 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         String input = valorProduto2.getText();
 
         // Remover todos os caracteres não numéricos
-        input = input.replaceAll("[^\\d]", "");
+        input = input.replaceAll("[^\\d.,]", "");
         valorProduto2.setText(input);
     }//GEN-LAST:event_valorProduto2KeyReleased
 
@@ -1026,7 +1026,7 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         String input = descricaoProduto2.getText();
 
         // Remover todos os caracteres não alfabéticos
-        input = input.replaceAll("[^\\p{L}]", "");
+        input = input.replaceAll("[^\\p{L} ]", "");
         descricaoProduto2.setText(input);
     }//GEN-LAST:event_descricaoProduto2KeyReleased
 

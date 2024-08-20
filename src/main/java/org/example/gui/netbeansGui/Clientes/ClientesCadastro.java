@@ -790,7 +790,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
         String input = nomeClientes1.getText();
 
         // Remover todos os caracteres não alfabéticos
-        input = input.replaceAll("[^\\p{L}]", "");
+        input = input.replaceAll("[^\\p{L} ]", "");
         nomeClientes1.setText(input);
     }//GEN-LAST:event_nomeClientes1KeyReleased
 
@@ -887,7 +887,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
         String input = nomeClientes2.getText();
 
         // Remover todos os caracteres não alfabéticos
-        input = input.replaceAll("[^\\p{L}]", "");
+        input = input.replaceAll("[^\\p{L} ]", "");
         nomeClientes2.setText(input);
     }//GEN-LAST:event_nomeClientes2KeyReleased
 

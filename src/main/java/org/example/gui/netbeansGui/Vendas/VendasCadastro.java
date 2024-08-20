@@ -672,7 +672,7 @@ public class VendasCadastro extends javax.swing.JFrame {
         String input = valorUnitario.getText();
 
         // Remover todos os caracteres não numéricos
-        input = input.replaceAll("[^\\d]", "");
+        input = input.replaceAll("[^\\d.,]", "");
         valorUnitario.setText(input);
     }//GEN-LAST:event_valorUnitarioKeyReleased
 
