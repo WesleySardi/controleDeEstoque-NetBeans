@@ -42,9 +42,9 @@
                     </goals>
                     <configuration>
                         <archive>
-                            <manifestEntries>
-                                <Main-Class>org.example.gui.netbeansGui.FirstOptions</Main-Class>
-                            </manifestEntries>
+                            <manifest>
+                               <mainClass>org.example.gui.netbeansGui.FirstOptions</mainClass>
+                            </manifest>
                         </archive>
                     </configuration>
                 </execution>
