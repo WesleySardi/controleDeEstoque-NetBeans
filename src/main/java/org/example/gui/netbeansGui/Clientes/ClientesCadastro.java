@@ -112,6 +112,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
 
         nomeClientes2.setForeground(new java.awt.Color(204, 204, 204));
         nomeClientes2.setText("Nome do Cliente");
+        nomeClientes2.setNextFocusableComponent(telefoneClientes2);
         nomeClientes2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 nomeClientes2FocusGained(evt);
@@ -152,6 +153,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
 
         emailClientes2.setForeground(new java.awt.Color(204, 204, 204));
         emailClientes2.setText("exemplo@ex.com");
+        emailClientes2.setNextFocusableComponent(cpfClientes2);
         emailClientes2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 emailClientes2FocusGained(evt);
@@ -169,7 +171,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
 
         telefoneClientes2.setForeground(new java.awt.Color(204, 204, 204));
         telefoneClientes2.setText("(00) 0 0000-0000");
-        telefoneClientes2.setNextFocusableComponent(nomeClientes2);
+        telefoneClientes2.setNextFocusableComponent(emailClientes2);
         telefoneClientes2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 telefoneClientes2FocusGained(evt);
@@ -270,6 +272,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
 
         nomeClientes1.setForeground(new java.awt.Color(204, 204, 204));
         nomeClientes1.setText("Nome do Cliente");
+        nomeClientes1.setNextFocusableComponent(telefoneClientes1);
         nomeClientes1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 nomeClientes1FocusGained(evt);
@@ -292,7 +295,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
 
         cpfClientes1.setForeground(new java.awt.Color(204, 204, 204));
         cpfClientes1.setText("000-000-000-00");
-        cpfClientes1.setNextFocusableComponent(nomeClientes2);
+        cpfClientes1.setNextFocusableComponent(nomeClientes1);
         cpfClientes1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 cpfClientes1FocusGained(evt);
@@ -309,7 +312,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
 
         telefoneClientes1.setForeground(new java.awt.Color(204, 204, 204));
         telefoneClientes1.setText("(00) 0 0000-0000");
-        telefoneClientes1.setNextFocusableComponent(nomeClientes2);
+        telefoneClientes1.setNextFocusableComponent(emailClientes1);
         telefoneClientes1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 telefoneClientes1FocusGained(evt);
@@ -332,6 +335,7 @@ public class ClientesCadastro extends javax.swing.JFrame {
 
         emailClientes1.setForeground(new java.awt.Color(204, 204, 204));
         emailClientes1.setText("exemplo@ex.com");
+        emailClientes1.setNextFocusableComponent(cpfClientes1);
         emailClientes1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 emailClientes1FocusGained(evt);
