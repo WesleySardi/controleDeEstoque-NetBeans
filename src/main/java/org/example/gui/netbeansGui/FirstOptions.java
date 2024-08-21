@@ -351,7 +351,16 @@ public class FirstOptions extends javax.swing.JFrame {
 
             // Converter os objetos java.util.Date para java.sql.Timestamp
             java.sql.Timestamp dataInicialTimestamp = new java.sql.Timestamp(dataInicial.getTime());
-            java.sql.Timestamp dataFinalTimestamp = new java.sql.Timestamp(dataFinal.getTime());
+
+            // Ajustar a data final para o final do dia 21/08/2024
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(dataFinal);
+            calendar.set(Calendar.HOUR_OF_DAY, 23);
+            calendar.set(Calendar.MINUTE, 59);
+            calendar.set(Calendar.SECOND, 59);
+            calendar.set(Calendar.MILLISECOND, 999);
+
+            java.sql.Timestamp dataFinalTimestamp = new java.sql.Timestamp(calendar.getTimeInMillis());
 
             System.out.println("Data inicial fornecida: " + dataInicialTimestamp);
             System.out.println("Data final fornecida: " + dataFinalTimestamp);
