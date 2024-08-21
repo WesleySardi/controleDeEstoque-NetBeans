@@ -872,7 +872,7 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         String input = valorProduto1.getText();
 
         // Remover todos os caracteres não numéricos
-        input = input.replaceAll("[^\\d.,]", "");
+        input = input.replaceAll("[^\\d.]", "");
         valorProduto1.setText(input);
     }//GEN-LAST:event_valorProduto1KeyReleased
 
@@ -975,7 +975,7 @@ public class ProdutosCadastro extends javax.swing.JFrame {
         String input = valorProduto2.getText();
 
         // Remover todos os caracteres não numéricos
-        input = input.replaceAll("[^\\d.,]", "");
+        input = input.replaceAll("[^\\d.]", "");
         valorProduto2.setText(input);
     }//GEN-LAST:event_valorProduto2KeyReleased
 
