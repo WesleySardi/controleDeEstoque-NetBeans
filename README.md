@@ -1,6 +1,27 @@
-# Controle de estoque utilizando NetBeans
-O projeto consiste em um sistema de controle de estoque. Utilizei o NetBeans para criar a interface gráfica e Java para estruturar o back-end, com armazenamento de dados no PostgreSQL.
+# 📦 Controle de Estoque utilizando NetBeans
 
-O objetivo principal deste projeto foi otimizar o desempenho do sistema, buscando torná-lo mais leve e eficiente para operar em máquinas menos potentes. Para isso, optei por não incluir as tecnologias de Spring Security e Token JWT para segurança, evitando processamentos desnecessários.
+Este é um projeto comunitário desenvolvido em parceria com a **Universidade Católica de Santa Catarina (Joinville)** para a **Maternidade Darcy Vargas**. O objetivo foi criar um sistema de controle de estoque **leve, eficiente** e funcional mesmo em computadores com recursos limitados.
 
-O sistema foi desenvolvido para proporcionar uma experiência prática ao usuário, permitindo registrar as entradas e saídas dos produtos do estoque de forma simplificada, substituindo métodos tradicionais como caneta e papel. Além disso, oferece a possibilidade de gerar relatórios detalhados sobre o estoque, facilitando o acompanhamento e a análise das atividades relacionadas à gestão de inventário.
+## 🛠 Tecnologias Utilizadas
+
+- **NetBeans** – Interface gráfica
+- **Java** – Lógica de negócio (back-end)
+- **PostgreSQL** – Banco de dados
+
+A aplicação foi desenvolvida com foco em simplicidade e desempenho. Para isso, **tecnologias como Spring Security e JWT foram propositalmente evitadas**, garantindo leveza e facilidade de uso.
+
+## ✅ Funcionalidades Principais
+
+- Registro simplificado de entradas e saídas de produtos  
+- Substituição de métodos manuais, como caneta e papel  
+- Geração de relatórios detalhados para gestão e acompanhamento do inventário
+
+## ⚙️ Características
+
+- Interface prática e direta para o usuário  
+- Ideal para ambientes com baixa capacidade computacional  
+- Sistema adaptado às necessidades reais da instituição  
+
+## 💡 Propósito Social
+
+Este projeto demonstra a aplicação de soluções tecnológicas em **iniciativas sociais reais**, promovendo **impacto positivo** por meio da **inovação acessível**.
